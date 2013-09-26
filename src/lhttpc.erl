@@ -58,6 +58,7 @@
 -type result() ::
         {ok, {{pos_integer(), string()}, headers(), body()}} |
         {ok, upload_state()} |
+        {ok, {http_error, any()}} |
         {error, {any(), list()}} | %% {Reason, Stacktrace}
         {error, atom()}.
 
