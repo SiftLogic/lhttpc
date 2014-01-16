@@ -242,6 +242,8 @@ send_request(#client_state{socket = undefined} = State) ->
             throw(connect_timeout);
         {error, "record overflow"} ->
             throw(ssl_error);
+        {error,{tls_alert,"record overflow"}} ->
+            throw(ssl_error);
         {error, Reason} ->
             erlang:error(Reason)
     catch
