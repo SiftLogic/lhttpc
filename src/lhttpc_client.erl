@@ -244,6 +244,9 @@ send_request(#client_state{socket = undefined} = State) ->
             throw(ssl_error);
         {error,{tls_alert,"record overflow"}} ->
             throw(ssl_error);
+        {error, {{{function_clause, _}, _}, _}} ->
+            %% this is hit by tls with unmatched name
+            throw(ssl_error);
         {error, Reason} ->
             erlang:error(Reason)
     catch
