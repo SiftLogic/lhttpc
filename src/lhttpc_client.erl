@@ -244,6 +244,8 @@ send_request(#client_state{socket = undefined} = State) ->
             throw(ssl_error);
         {error, {{tls_alert, _}, _}} ->
             throw(ssl_error);
+        {error, {error, {{tls_alert, _}, _}}} ->
+            throw(ssl_error);
         {error, {{function_clause, _}, _}} ->
             throw(ssl_error);
         {error, {{{function_clause, _}, _}, _}} ->
