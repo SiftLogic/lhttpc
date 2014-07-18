@@ -24,7 +24,7 @@
 %%% ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 %%% ----------------------------------------------------------------------------
 
-%%% @author Oscar Hellström <oscar@hellstrom.st>
+%%% @author Oscar Hellstrm <oscar@hellstrom.st>
 -module(lhttpc_lib_tests).
 
 -include("../src/lhttpc_types.hrl").
