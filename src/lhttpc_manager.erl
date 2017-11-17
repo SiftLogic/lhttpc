@@ -24,7 +24,7 @@
 %%% ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 %%% ----------------------------------------------------------------------------
 
-%%% @author Oscar Hellström <oscar@hellstrom.st>
+%%% @author Oscar Hellstrom <oscar@hellstrom.st>
 %%% @author Filipe David Manana <fdmanana@apache.org>
 %%% @doc Connection manager for the HTTP client.
 %%% This gen_server is responsible for keeping track of persistent
@@ -161,7 +161,7 @@ init(Options) ->
         true ->
             % Make sure that the ssl random number generator is seeded
             % This was new in R13 (ssl-3.10.1 in R13B vs. ssl-3.10.0 in R12B-5)
-            ssl:seed(crypto:rand_bytes(255));
+            ssl:seed(crypto:strong_rand_bytes(255));
         false ->
             ok
     end,
